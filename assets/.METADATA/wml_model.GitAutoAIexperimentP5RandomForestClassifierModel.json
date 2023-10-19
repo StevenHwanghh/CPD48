@@ -1,0 +1,636 @@
+{
+  "attachments": [
+    {
+      "asset_type": "wml_model",
+      "name": "P5_automl.zip",
+      "user_data": {
+        "content_format": "pipeline-node",
+        "pipeline_node_id": "automl"
+      },
+      "created_at": "2023-10-19T03:34:57Z",
+      "id": "2ed45b38-823f-4ed2-ad50-f44081c35a7b",
+      "is_managed": true,
+      "is_referenced": false,
+      "is_remote": false,
+      "transfer_complete": true,
+      "url1": "/v2/asset_files/wml_model/2ed45b38-823f-4ed2-ad50-f44081c35a7b?project_id=ecede7ee-d706-4ad4-9dea-52113f7ddecc&userfs=true&signature=gcm-booZDwX%2FlHh7QOvMs6KvIA%3D%3D%3BLJF83cMmw0KGu5MgwE8UWA%3D%3D%3ATVsuME6q5InAN%2ByVHZ0eWkfSyVUzWQSR0aZL8dtUp9oOvVcS1yXfPlL5guUtWGTggonl%2F3WPak%2Fdf%2FEUB5T1G7Hwv5mPTbcFmFYuguqzDKZclakeqSLWIBiCe%2Bfg%2FhTBsjh6mxsVwhNo%2BTA546%2FPMcpd%2BCHeduvc4NdL%2FnsdFNw7fVNBaUqn3%2FzP91gIxKcU%2FqdoZPDq25ipFjUktRMLELIOxZVq%2BTimJ3bYluPidfc1tswrw6I8Db%2FlRotFPF4yRv1LvEhSYtotkw%3D%3D"
+    },
+    {
+      "asset_type": "wml_model",
+      "name": "pipeline_model.json",
+      "user_data": {
+        "content_format": "native"
+      },
+      "created_at": "2023-10-19T03:34:57Z",
+      "id": "34ec6169-b86e-44d6-9f0e-f417443dcfc0",
+      "is_managed": true,
+      "is_referenced": false,
+      "is_remote": false,
+      "transfer_complete": true,
+      "url1": "/v2/asset_files/wml_model/34ec6169-b86e-44d6-9f0e-f417443dcfc0?project_id=ecede7ee-d706-4ad4-9dea-52113f7ddecc&userfs=true&signature=gcm-j9LSSa0YkUCHPJ35XiuS3A%3D%3D%3B2qRoHdAXhz8UeaLIZysoPQ%3D%3D%3AklnHAb9PHOhHR5JOJqpjF4%2BhVYrpkKluJ7kd0VDf0EGHWxWE229GtJRO32F1dqMFPAhqAseamU5aAxPiOFTykGwYBzFtDjKkRla%2B2RDzGz9VOBhyOMydaqfj2r9tc51PVElySMTpl0wXd1qm9bZp47t6Rb2M%2BVU2GxDjYJXgv1xAUEmAT0Tl%2Bs0jOJX%2BMYEktMauX6gAQeZjiNFP1%2BPeda3PO1XgDYdBYyoJ3ioEmAL1zX00wb4l2Hn6dqx7DPydZU%2BGI4cCYcz7gQ%3D%3D"
+    }
+  ],
+  "entity": {
+    "wml_model": {
+      "data_asset_dependencies": [
+        "data_asset.germancreditdatabiasedtrainingcsv"
+      ],
+      "hybrid_pipeline_software_specs": [
+        {
+          "base_id": "b4246d87-d8b3-5621-9fea-76a8ea452616",
+          "name": "autoai-kb_rt23.1-py3.10"
+        }
+      ],
+      "data_preprocessing": [
+        {
+          "input": {
+            "columns": 21,
+            "rows": 5000
+          },
+          "output": {
+            "columns": 21,
+            "rows": 5000
+          },
+          "props": {
+            "type": "stratified"
+          },
+          "stage": "sampling"
+        },
+        {
+          "input": {
+            "columns": 21,
+            "rows": 5000
+          },
+          "output": {
+            "columns": 21,
+            "rows": 4982
+          },
+          "props": {
+            "duplicated_rows_count": 18,
+            "outliers_count": null
+          },
+          "stage": "cleansing"
+        }
+      ],
+      "label_column": "Risk",
+      "pipeline": {
+        "id": "wml_pipeline.GitAutoAIexperiment"
+      },
+      "training_id": "a05310c2-8e82-4f08-99ec-35b9972ebb33",
+      "metrics": [
+        {
+          "context": {
+            "binary_classification": {
+              "confusion_matrix": [
+                {
+                  "fn": 72,
+                  "fp": 65,
+                  "tn": 267,
+                  "tp": 95,
+                  "true_class": "Risk"
+                },
+                {
+                  "fn": 65,
+                  "fp": 72,
+                  "tn": 95,
+                  "tp": 267,
+                  "true_class": "No Risk"
+                }
+              ],
+              "roc_curve": [
+                {
+                  "fpr": [
+                    0,
+                    0.015060240963855422,
+                    0.024096385542168676,
+                    0.04819277108433735,
+                    0.0572289156626506,
+                    0.07530120481927711,
+                    0.09036144578313253,
+                    0.12048192771084337,
+                    0.1355421686746988,
+                    0.15963855421686746,
+                    0.18072289156626506,
+                    0.20180722891566266,
+                    0.23493975903614459,
+                    0.27710843373493976,
+                    0.31626506024096385,
+                    0.3493975903614458,
+                    0.3674698795180723,
+                    0.39457831325301207,
+                    0.40963855421686746,
+                    0.4457831325301205,
+                    0.49698795180722893,
+                    0.5331325301204819,
+                    0.5572289156626506,
+                    0.6475903614457831,
+                    0.6867469879518072,
+                    0.8614457831325302,
+                    0.9457831325301205,
+                    1
+                  ],
+                  "thresholds": [
+                    1.9877524375915527,
+                    0.93183434009552,
+                    0.78718101978302,
+                    0.7347832918167114,
+                    0.7059093713760376,
+                    0.6719515323638916,
+                    0.6261377930641174,
+                    0.582614004611969,
+                    0.5607399344444275,
+                    0.5427407622337341,
+                    0.5180358290672302,
+                    0.49497413635253906,
+                    0.4764072299003601,
+                    0.4411517083644867,
+                    0.3967910706996918,
+                    0.3663845956325531,
+                    0.34554624557495117,
+                    0.321818083524704,
+                    0.3104124665260315,
+                    0.28623896837234497,
+                    0.2490125298500061,
+                    0.22064131498336792,
+                    0.19803756475448608,
+                    0.12330704927444458,
+                    0.10152215510606766,
+                    0.013832557946443558,
+                    0.0035102805122733116,
+                    0
+                  ],
+                  "tpr": [
+                    0,
+                    0.12574850299401197,
+                    0.2874251497005988,
+                    0.33532934131736525,
+                    0.3652694610778443,
+                    0.38922155688622756,
+                    0.4251497005988024,
+                    0.46107784431137727,
+                    0.49700598802395207,
+                    0.5149700598802395,
+                    0.5568862275449101,
+                    0.5868263473053892,
+                    0.6227544910179641,
+                    0.6467065868263473,
+                    0.6826347305389222,
+                    0.7005988023952096,
+                    0.7425149700598802,
+                    0.7604790419161677,
+                    0.7904191616766467,
+                    0.8083832335329342,
+                    0.8383233532934131,
+                    0.8562874251497006,
+                    0.8982035928143712,
+                    0.9520958083832335,
+                    0.9760479041916168,
+                    0.9880239520958084,
+                    0.9940119760479041,
+                    1
+                  ],
+                  "true_class": "Risk"
+                },
+                {
+                  "fpr": [
+                    0,
+                    0.005988023952095809,
+                    0.005988023952095809,
+                    0.023952095808383235,
+                    0.03592814371257485,
+                    0.10179640718562874,
+                    0.1377245508982036,
+                    0.16167664670658682,
+                    0.18562874251497005,
+                    0.20958083832335328,
+                    0.23353293413173654,
+                    0.25748502994011974,
+                    0.2934131736526946,
+                    0.31736526946107785,
+                    0.33532934131736525,
+                    0.3772455089820359,
+                    0.40718562874251496,
+                    0.4431137724550898,
+                    0.46706586826347307,
+                    0.5029940119760479,
+                    0.5329341317365269,
+                    0.5748502994011976,
+                    0.6047904191616766,
+                    0.6347305389221557,
+                    0.6586826347305389,
+                    0.7125748502994012,
+                    0.8323353293413174,
+                    1
+                  ],
+                  "thresholds": [
+                    2,
+                    0.9973272681236267,
+                    0.9887225031852722,
+                    0.9209303855895996,
+                    0.8827492594718933,
+                    0.8139389753341675,
+                    0.7808172106742859,
+                    0.7556577324867249,
+                    0.7146711945533752,
+                    0.69465571641922,
+                    0.6788826584815979,
+                    0.6594890356063843,
+                    0.6379499435424805,
+                    0.6138327121734619,
+                    0.567465603351593,
+                    0.5304402709007263,
+                    0.506320595741272,
+                    0.4864943325519562,
+                    0.4674356281757355,
+                    0.4441123306751251,
+                    0.4196951985359192,
+                    0.3951176404953003,
+                    0.3348205089569092,
+                    0.3008731007575989,
+                    0.27205365896224976,
+                    0.22273136675357819,
+                    0.11211096495389938,
+                    0.012247537262737751
+                  ],
+                  "tpr": [
+                    0,
+                    0.05120481927710843,
+                    0.13855421686746988,
+                    0.28012048192771083,
+                    0.35240963855421686,
+                    0.4367469879518072,
+                    0.46686746987951805,
+                    0.49698795180722893,
+                    0.5542168674698795,
+                    0.5783132530120482,
+                    0.6054216867469879,
+                    0.6265060240963856,
+                    0.6506024096385542,
+                    0.677710843373494,
+                    0.7228915662650602,
+                    0.7590361445783133,
+                    0.7981927710843374,
+                    0.8162650602409639,
+                    0.8403614457831325,
+                    0.858433734939759,
+                    0.8795180722891566,
+                    0.8945783132530121,
+                    0.9246987951807228,
+                    0.9397590361445783,
+                    0.9518072289156626,
+                    0.9698795180722891,
+                    0.9849397590361446,
+                    1
+                  ],
+                  "true_class": "No Risk"
+                }
+              ]
+            },
+            "classes": [
+              "Risk",
+              "No Risk"
+            ],
+            "features_importance": [
+              {
+                "computation_type": "",
+                "features": {
+                  "NewFeature_7_pca_7": 0.35,
+                  "NewFeature_18_pca_18": 0.22,
+                  "NewFeature_5_pca_5": 0.17,
+                  "NewFeature_0_pca_0": 0.39,
+                  "ForeignWorker": 0,
+                  "Housing": 0.13,
+                  "NewFeature_3_pca_3": 0.18,
+                  "NewFeature_16_pca_16": 0.26,
+                  "NewFeature_14_pca_14": 0.28,
+                  "NewFeature_9_pca_9": 0.25,
+                  "NewFeature_17_pca_17": 0.25,
+                  "LoanAmount": 0.33,
+                  "NewFeature_1_pca_1": 0.24,
+                  "NewFeature_8_pca_8": 0.23,
+                  "InstallmentPercent": 0.57,
+                  "ExistingSavings": 0.05,
+                  "NewFeature_19_pca_19": 0.7,
+                  "CheckingStatus": 0.3,
+                  "LoanPurpose": 0.09,
+                  "NewFeature_10_pca_10": 0.23,
+                  "NewFeature_2_pca_2": 0.16,
+                  "Job": 0.03,
+                  "NewFeature_6_pca_6": 0.29,
+                  "InstallmentPlans": 0.03,
+                  "OthersOnLoan": 0.15,
+                  "NewFeature_13_pca_13": 0.4,
+                  "LoanDuration": 0.97,
+                  "NewFeature_15_pca_15": 0.46,
+                  "Age": 1,
+                  "CreditHistory": 0.09,
+                  "NewFeature_11_pca_11": 0.19,
+                  "CurrentResidenceDuration": 0.33,
+                  "ExistingCreditsCount": 0.35,
+                  "NewFeature_4_pca_4": 0.24,
+                  "Telephone": 0.04,
+                  "Sex": 0.04,
+                  "Dependents": 0,
+                  "OwnsProperty": 0.43,
+                  "EmploymentDuration": 0.21,
+                  "NewFeature_12_pca_12": 0.32
+                },
+                "stage": "Mean"
+              }
+            ],
+            "intermediate_model": {
+              "composition_steps": [
+                "Split_TrainingHoldout",
+                "TrainingDataset_full_4483_20",
+                "Datetime_FE",
+                "TrainingDataset_full_4483_20",
+                "Preprocessor_default",
+                "DAUB",
+                "hpo_d",
+                "cognito",
+                "hpo_c",
+                "Ensemble"
+              ],
+              "duration": 75406,
+              "location": {
+                "model": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/data/automl/batch_ensemble_output/Pipeline1/model.pickle",
+                "pipeline": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/data/automl/batch_ensemble_output/Pipeline1/pipeline.json",
+                "pipeline_model": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/data/automl/batch_ensemble_output/Pipeline1/pipeline-model.json"
+              },
+              "name": "P5",
+              "notebook_location": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/data/automl/batch_ensemble_output/Pipeline1/incremental_learning_notebook.ipynb",
+              "pipeline_nodes": [
+                "PreprocessingTransformer",
+                "autoai_libs.cognito.transforms.transform_utils.pca",
+                "autoai_libs.cognito.transforms.transform_utils.FS1",
+                "BatchedTreeEnsembleClassifier(base_estimator=RandomForestClassifier)"
+              ],
+              "process": "batch_ensemble_output",
+              "schema_location": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/data/automl/batch_ensemble_output/Pipeline1/schema.json"
+            },
+            "phase": "batch_ensemble_output",
+            "prediction_type": "classification",
+            "target_column": "Risk"
+          },
+          "ml_metrics": {
+            "training_roc_auc": 0.8288580663770074,
+            "holdout_average_precision": 0.5073231754989058,
+            "holdout_neg_log_loss": -0.5349438782028462,
+            "training_accuracy": 0.7742603263294724,
+            "holdout_roc_auc": 0.7788759829738113,
+            "training_balanced_accuracy": 0.7416622640082363,
+            "training_f1": 0.8319041314933301,
+            "holdout_precision": 0.7876106194690266,
+            "training_average_precision": 0.8995186365331462,
+            "training_neg_log_loss": -0.4739483219779183,
+            "holdout_recall": 0.8042168674698795,
+            "training_precision": 0.823625013160122,
+            "holdout_accuracy": 0.7254509018036072,
+            "holdout_balanced_accuracy": 0.6865395714594906,
+            "training_recall": 0.8406099571581892,
+            "holdout_f1": 0.7958271236959762
+          },
+          "timestamp": "2023-10-19T03:25:59.000Z"
+        }
+      ],
+      "ml_version": "4.0.19",
+      "type": "wml-hybrid_0.1",
+      "schemas": {
+        "input": [
+          {
+            "fields": [
+              {
+                "name": "CheckingStatus",
+                "type": "other"
+              },
+              {
+                "name": "LoanDuration",
+                "type": "double"
+              },
+              {
+                "name": "CreditHistory",
+                "type": "other"
+              },
+              {
+                "name": "LoanPurpose",
+                "type": "other"
+              },
+              {
+                "name": "LoanAmount",
+                "type": "double"
+              },
+              {
+                "name": "ExistingSavings",
+                "type": "other"
+              },
+              {
+                "name": "EmploymentDuration",
+                "type": "other"
+              },
+              {
+                "name": "InstallmentPercent",
+                "type": "double"
+              },
+              {
+                "name": "Sex",
+                "type": "other"
+              },
+              {
+                "name": "OthersOnLoan",
+                "type": "other"
+              },
+              {
+                "name": "CurrentResidenceDuration",
+                "type": "double"
+              },
+              {
+                "name": "OwnsProperty",
+                "type": "other"
+              },
+              {
+                "name": "Age",
+                "type": "double"
+              },
+              {
+                "name": "InstallmentPlans",
+                "type": "other"
+              },
+              {
+                "name": "Housing",
+                "type": "other"
+              },
+              {
+                "name": "ExistingCreditsCount",
+                "type": "double"
+              },
+              {
+                "name": "Job",
+                "type": "other"
+              },
+              {
+                "name": "Dependents",
+                "type": "double"
+              },
+              {
+                "name": "Telephone",
+                "type": "other"
+              },
+              {
+                "name": "ForeignWorker",
+                "type": "other"
+              }
+            ],
+            "id": "auto_ai_kb_input_schema"
+          }
+        ],
+        "output": []
+      },
+      "content_location": {
+        "connection": {},
+        "contents": [
+          {
+            "content_format": "pipeline-node",
+            "file_name": "P5_automl.zip",
+            "location": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/assets/a05310c2-8e82-4f08-99ec-35b9972ebb33_P5_batch_ensemble_output/resources/wml_model/P5_automl.zip",
+            "pipeline_node_id": "automl"
+          },
+          {
+            "content_format": "native",
+            "file_name": "pipeline_model.json",
+            "location": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/assets/a05310c2-8e82-4f08-99ec-35b9972ebb33_P5_batch_ensemble_output/resources/wml_model/pipeline_model.json"
+          }
+        ],
+        "location": {
+          "path": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data",
+          "notebooks_path": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/notebooks",
+          "training": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33",
+          "training_status": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/training-status.json",
+          "assets_path": "/projects/ecede7ee-d706-4ad4-9dea-52113f7ddecc/assets/auto_ml/auto_ml.GitAutoAIexperiment/wml_data/a05310c2-8e82-4f08-99ec-35b9972ebb33/assets"
+        },
+        "type": "fs"
+      },
+      "training_data_references": [
+        {
+          "connection": {},
+          "id": "german_credit_data_biased_training.csv",
+          "location": {
+            "href": "/userfs/v2/assets/data_asset.germancreditdatabiasedtrainingcsv?project_id=ecede7ee-d706-4ad4-9dea-52113f7ddecc",
+            "id": "data_asset.germancreditdatabiasedtrainingcsv",
+            "project_id": "ecede7ee-d706-4ad4-9dea-52113f7ddecc",
+            "userfs": "true"
+          },
+          "schema": {
+            "fields": [
+              {
+                "name": "CheckingStatus",
+                "type": "other"
+              },
+              {
+                "name": "LoanDuration",
+                "type": "double"
+              },
+              {
+                "name": "CreditHistory",
+                "type": "other"
+              },
+              {
+                "name": "LoanPurpose",
+                "type": "other"
+              },
+              {
+                "name": "LoanAmount",
+                "type": "double"
+              },
+              {
+                "name": "ExistingSavings",
+                "type": "other"
+              },
+              {
+                "name": "EmploymentDuration",
+                "type": "other"
+              },
+              {
+                "name": "InstallmentPercent",
+                "type": "double"
+              },
+              {
+                "name": "Sex",
+                "type": "other"
+              },
+              {
+                "name": "OthersOnLoan",
+                "type": "other"
+              },
+              {
+                "name": "CurrentResidenceDuration",
+                "type": "double"
+              },
+              {
+                "name": "OwnsProperty",
+                "type": "other"
+              },
+              {
+                "name": "Age",
+                "type": "double"
+              },
+              {
+                "name": "InstallmentPlans",
+                "type": "other"
+              },
+              {
+                "name": "Housing",
+                "type": "other"
+              },
+              {
+                "name": "ExistingCreditsCount",
+                "type": "double"
+              },
+              {
+                "name": "Job",
+                "type": "other"
+              },
+              {
+                "name": "Dependents",
+                "type": "double"
+              },
+              {
+                "name": "Telephone",
+                "type": "other"
+              },
+              {
+                "name": "ForeignWorker",
+                "type": "other"
+              },
+              {
+                "name": "Risk",
+                "type": "other"
+              }
+            ],
+            "id": "auto_ai_kb_input_schema"
+          },
+          "type": "data_asset"
+        }
+      ],
+      "software_spec": {
+        "base_id": "8c1a58c6-62b5-4dc4-987a-df751c2756b6",
+        "name": "hybrid_0.1"
+      },
+      "content_import_state": "completed",
+      "test_data_references": []
+    }
+  },
+  "metadata": {
+    "name": "Git AutoAI experiment - P5 Random Forest Classifier - Model",
+    "tags": [],
+    "asset_type": "wml_model",
+    "asset_category": "USER",
+    "resource_key": "8562079c-e2bd-4cb0-843a-dd7a2b579fc9",
+    "origin_country": "US",
+    "created_at": "2023-10-19T03:34:57Z",
+    "created": 1697686497342,
+    "asset_id": "wml_model.GitAutoAIexperimentP5RandomForestClassifierModel",
+    "asset_attributes": [
+      "wml_model"
+    ]
+  }
+}
