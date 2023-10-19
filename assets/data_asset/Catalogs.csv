@@ -1,0 +1,16 @@
+Catalog Owner,password,email,display_name,Catalog Name,User Group (Editor Role)
+dqa1,ANTLrcpintilkoA8jOd9ISytg5Y=,dqa1@ibm.com,dqa1,Enterprise Snowflake MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa1,ANTLrcpintilkoA8jOd9ISytg5Y=,dqa1@ibm.com,dqa1,Enterprise Snowflake DV MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa2,ANTLroqX4QHZFp/HX1MTZSb1HyY=,dqa2@ibm.com,dqa2,Enterprise COS MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa2,ANTLroqX4QHZFp/HX1MTZSb1HyY=,dqa2@ibm.com,dqa2,Enterprise COS DV MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa3,ANTLr7U7NEkNapVuEcDJWSDClLY=,dqa3@ibm.com,dqa3,Enterprise Teradata MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa3,ANTLr7U7NEkNapVuEcDJWSDClLY=,dqa3@ibm.com,dqa3,Enterprise Teradata DV MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa4,ANTLqAt9HrMgHqAw+DvP7TJEJkY=,dqa4@ibm.com,dqa4,Enterprise HIVE MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa4,ANTLqAt9HrMgHqAw+DvP7TJEJkY=,dqa4@ibm.com,dqa4,Enterprise HIVE DV MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa7,ANTLq0uIYWpcmr/LK4+hqTgcuvY=,dqa7@ibm.com,dqa7,Enterprise S3_MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa7,ANTLq0uIYWpcmr/LK4+hqTgcuvY=,dqa7@ibm.com,dqa7,Enterprise S3_DV_MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa7,ANTLq0uIYWpcmr/LK4+hqTgcuvY=,dqa7@ibm.com,dqa7,Enterprise S3_DV_MDI_Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa8,ANTLpMqo4dbSDt/ftup2/RsmVIc=,dqa8@ibm.com,dqa8,Enterprise Netezza MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa8,ANTLpMqo4dbSDt/ftup2/RsmVIc=,dqa8@ibm.com,dqa8,Enterprise Netezza DV MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa9,ANTLpfUENJ4GctV2+HmswR0R3xc=,dqa9@ibm.com,dqa9,Enterprise MySQL MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
+dqa9,ANTLpfUENJ4GctV2+HmswR0R3xc=,dqa9@ibm.com,dqa9,Enterprise MySQL DV MDE Catalog,Data Quality Analyst Group|Reporting Administrator Group
