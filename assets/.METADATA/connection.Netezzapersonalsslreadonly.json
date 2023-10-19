@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "asset_type": "connection",
+    "name": "Netezza_personal_ssl_readonly",
+    "origin_country": "us",
+    "rov": {
+      "mode": 0
+    },
+    "resource_key": "0000:0000:0000:0000:0000:FFFF:091E:6124|5480|conopsdb",
+    "asset_category": "USER",
+    "created_at": "2023-10-19T02:59:41Z",
+    "created": 1697684381038,
+    "asset_id": "connection.Netezzapersonalsslreadonly",
+    "asset_attributes": [
+      "connection"
+    ]
+  },
+  "entity": {
+    "connection": {
+      "datasource_type": "c2a82a72-0711-4376-a468-4e9951cabf22",
+      "context": "source,target",
+      "properties": {},
+      "flags": [
+        "personal_credentials"
+      ],
+      "ref_catalog_id": "069cf18e-c4f2-4430-8641-03fc15eca1f3",
+      "ref_asset_id": "90c322c6-5544-4003-be28-14f8e2c86b67"
+    }
+  },
+  "attachments": []
+}
